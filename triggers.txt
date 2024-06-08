@@ -1,0 +1,28 @@
+ create table emp_tab(eno varchar2(10), ename varchar2(30), esal number(10,2), job varchar2(20), primary key(eno));
+
+Table created.
+
+
+SQL> create table emp_x(eno varchar2(10), ename varchar2(30), esal number(10,2), job varchar2(20), primary key(eno));
+
+Table created.
+
+
+SQL> create table emp_modified(eno varchar2(10), ename varchar2(30), esal number(10,2), job varchar2(20), primary key(eno));
+
+Table created.
+
+
+SQL> create table emp_new(eno varchar2(10), ename varchar2(30), esal number(10,2), job varchar2(20), primary key(eno));
+
+Table created.
+
+SQL> 
+insert into emp_tab (select empno,empname,salary,job from  (select * from employee order by empname) where rownum <=10);
+
+10 rows created.
+
+SQL> alter table emp_x add x_date date;
+
+Table altered.
+
